@@ -134,6 +134,13 @@
                             <li><a href="/admin/users/create">用户添加</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#"><i class="icon-user"></i>商品分类</a>
+                        <ul>
+                            <li><a href="/admin/cates">分类列表</a></li>
+                            <li><a href="/admin/cates/create">添加分类</a></li>
+                        </ul>
+                    </li>
                     
                 </ul>
             </div>         

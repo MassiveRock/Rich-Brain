@@ -28,8 +28,13 @@
                     	<img src="/uploads/{{ $v->userinfo->profile }}" style="width:80px; border-radius:10px;">
                     </td>
                     <td>
-                    	<a href="" class="btn btn-danger">删除</a>
-                    	<a href="" class="btn btn-info">修改</a>
+                        <form action="/admin/users/{{ $v->id }}" method="post" style="display:inline;">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <input type="submit" class="btn btn-danger" value="删除">
+                            
+                        </form>
+                    	<a href="/admin/users/{{ $v->id }}/edit" class="btn btn-info">修改</a>
                     </td>
                 </tr>
                 @endforeach

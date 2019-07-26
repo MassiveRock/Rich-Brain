@@ -9,6 +9,7 @@ use App\Models\Users;
 use Hash;
 use DB;
 use App\Models\Usersinfo;
+use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -98,7 +99,12 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Users::find($id);
+        $userinfo = Usersinfo::where('uid',$id)->first();
+
+        $user->profile = $userinfo->profile;
+        //加载视图
+        return view('admin.users.edit',['user'=>$user]);
     }
 
     /**
@@ -108,9 +114,44 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserStore $request, $id)
-    {
-        //
+    public function update(Request $request, $id)
+    {   
+        
+        //检查用户是否有文件上传
+        if(!$request->hasFile('profile')){
+            $user = Users::find($id);
+            $user->email = $request->input('email','');
+            $user->phone = $request->input('phone','');
+            if($user->save()){
+                return redirect('admin/users')->with('success','修改成功');
+            }else{
+                return back()->with('error','修改失败');
+            }
+        }else{
+            DB::beginTransaction();
+            $path = $request->file('profile')->store(date('Ymd'));
+            $usersinfo = Usersinfo::where('uid',$id)->first();
+            Storage::delete([$usersinfo->profile]);
+            //设置新图片
+            $usersinfo->profile = $path;
+            //执行修改
+            $res1 = $usersinfo->save();
+            $user = Users::find($id);
+            //修改用户信息
+            $user->email = $request->input('email','');
+            $user->phone = $request->input('phone','');
+            $res2 = $user->save();
+
+            if($res1 && $res2){
+                DB::commit();
+                return redirect('admin/users')->with('success','修改成功');
+            }else{
+                DB::rollBack();
+                return back()->with('error','修改失败');
+            }
+        }
+        // dump($request->all());
+
     }
 
     /**
@@ -121,6 +162,25 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        DB::beginTransaction();
+        $res1 = Users::destroy($id);
+
+        $userinfo = Usersinfo::where('uid',$id)->first();
+        $path = $userinfo->profile;
+        //删除用户
+        $res2 = Usersinfo::where('uid',$id)->delete();
+        //判断
+        if($res1 && $res2){
+            //删除图片
+            Storage::delete([$path]);
+            //提交事务
+            DB::commit();
+            return redirect('admin/users')->with('success','删除成功');
+        }else{
+            //回滚事务
+            DB::rollback();
+            return back()->with('error','删除失败');
+        }
     }
 }

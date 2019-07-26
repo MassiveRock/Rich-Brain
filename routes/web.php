@@ -19,3 +19,10 @@ Route::get('/', function () {
 Route::get('admin','Admin\IndexController@index');
 //后台用户路由-----庞磐
 Route::resource('admin/users','Admin\UsersController');
+//后台分类路由
+Route::resource('admin/cates','Admin\CatesController');
+
+//前台首页路由
+Route::get('home','Home\IndexController@index');
+
+
