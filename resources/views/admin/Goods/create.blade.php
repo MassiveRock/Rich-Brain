@@ -43,7 +43,7 @@
                     			<div class="mws-form-row">
                     				<label class="mws-form-label">Large text field</label>
                     				<div class="mws-form-item">
-						    <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+						    <script id="editor" type="text/plain" style="width:800px;height:500px;"></script>
                     				</div>
                     			</div>
                     			
