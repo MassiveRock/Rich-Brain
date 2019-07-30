@@ -12,17 +12,34 @@
 */
 
 Route::get('/', function () {
+
+
     return view('welcome');
 });
 
-//后台首页路由-----庞磐
-Route::get('admin','Admin\IndexController@index');
-//后台用户路由-----庞磐
-Route::resource('admin/users','Admin\UsersController');
-//后台分类路由
-Route::resource('admin/cates','Admin\CatesController');
-//后台商品管理路由
-Route::resource('admin/goods','Admin\GoodsController');
+
+//后台登录路由
+Route::get('admin/login','Admin\LoginController@login');
+//后台执行登录路由
+Route::post('admin/login/dologin','Admin\LoginController@dologin');
+
+Route::group(['middleware'=>'login'],function(){
+	//后台首页路由-----庞磐
+	Route::get('admin','Admin\IndexController@index');
+	//后台用户路由-----庞磐
+	Route::resource('admin/users','Admin\UsersController');
+	//后台分类路由
+	Route::resource('admin/cates','Admin\CatesController');
+	//后台商品管理路由
+	Route::resource('admin/goods','Admin\GoodsController');
+
+	//后台管理员管理路由
+	Route::resource('admin/adminuser','Admin\AdminuserController');
+	//后台权限管理
+	Route::resource('admin/nodes','Admin\NodesController');
+	//角色管理
+	Route::resource('admin/roles','Admin\RolesController');
+});
 
 //前台首页路由
 Route::get('home','Home\IndexController@index');
