@@ -135,10 +135,25 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="icon-user"></i>商品分类</a>
+                        <a href="#"><i class="icon-th-list"></i>商品分类</a>
                         <ul>
                             <li><a href="/admin/cates">分类列表</a></li>
                             <li><a href="/admin/cates/create">添加分类</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-th"></i>商品管理</a>
+                        <ul>
+                            <li><a href="/admin/goods">商品列表</a></li>
+                            <li><a href="/admin/goods/create">添加商品</a></li>
+                            <li><a href="/admin/goods">下架商品管理</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-cogs"></i>前台网页管理</a>
+                        <ul>
+                            <li><a href="/admin/cates">更换logo</a></li>
+                            <li><a href="/admin/cates/create">首页banner</a></li>
                         </ul>
                     </li>
                     

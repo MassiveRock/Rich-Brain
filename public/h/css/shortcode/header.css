@@ -38,9 +38,7 @@ Version: 1.0
 .main-menu li ul > li:hover > a {
   color: #cc3333;
 }
-.current,.main-menu > li:hover {
-  background: #ccc none repeat scroll 0 0;
-}
+
 .main-menu li.mega-parent {
   position: static;
 }

@@ -5,11 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home</title>
+    <title>阿迪达斯官方商城</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="/h/images/icons/favicon.ico">
+    <link rel="icon" href="/h/images/icons/logo.ico" type="image/x-icon">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- All css files are included here. -->
@@ -47,8 +48,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="login-register-area">
                                 <ul>
-                                    <li><a href="#">Login</a></li>
-                                    <li><a href="#">Register</a></li>
+                                    <li><a href="/home/login">登录</a></li>
+                                    <li><a href="#">注册</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -80,7 +81,7 @@
                                     </li>
                                     <li>
                                         <div class="header-cart">
-                                            <div class="cart-icon"> <a href="#">Cart<i class="zmdi zmdi-shopping-cart"></i></a> <span>2</span> </div>
+                                            <div class="cart-icon"> <a href="/home/cart">Cart<i class="zmdi zmdi-shopping-cart"></i></a> <span>2</span> </div>
                                             <div class="cart-content-wraper">
                                                 <div class="cart-single-wraper">
                                                     <div class="cart-img">
@@ -130,11 +131,8 @@
                             <div class="col-md-7 col-sm-10 hidden-xs">
                                 <nav id="primary-menu">
                                     <ul class="main-menu">
-                                        <li class="current"><a class="active" href="index.html">Home</a></li>
-                                        <li class="mega-parent pos-rltv"><a href="shop.html">Man</a></li>
-                                        <li class="mega-parent pos-rltv"><a href="shop.html">Women</a></li>
-                                    
-                                        <li class="mega-parent"><a href="index.html">Pages</a>
+                                        <li class="current"><a class="active" href="/home">主页</a></li>
+                                       <li class="mega-parent"><a href="/home/list">男子</a>
                                             <div class="mega-menu-area mma-970">
                                                 <ul class="single-mega-item coloum-4">
                                                    <li class="menu-title uppercase">Pages-01</li>
@@ -163,8 +161,66 @@
                                                 </ul>
                                             </div>
                                         </li>                     
-                                        <li><a href="blog.html">BLOG</a></li>
-                                        <li><a href="about-us.html">ABOUT</a></li>
+                                    <li class="mega-parent"><a href="/home/list">女子</a>
+                                            <div class="mega-menu-area mma-970">
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">Pages-01</li>
+                                                    <li><a href="about-us.html" target="_blank">About-us</a></li>
+                                                    <li><a href="blog.html" target="_blank">Blog</a></li>
+                                                    <li><a href="single-blog.html" target="_blank">Single Blog</a></li>
+                                                </ul>
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">pages-02</li>
+                                                    <li><a href="cart.html" target="_blank">Cart</a></li>
+                                                    <li><a href="checkout.html" target="_blank">Checkout</a></li>
+                                                    <li><a href="compare.html" target="_blank">Compare</a></li>
+                                                    <li><a href="complete-order.html" target="_blank">Complete Order</a></li>
+                                                    <li><a href="contact-us.html" target="_blank">Contact US</a></li>
+                                                </ul>
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">pages-03</li>
+                                                    <li><a href="login.html" target="_blank">Login</a></li>
+                                                    <li><a href="my-account.html" target="_blank">My Account</a></li>
+                                                </ul>
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">pages-03</li>
+                                                    <li><a href="shop.html" target="_blank">Shop</a></li>
+                                                    <li><a href="single-product.html" target="_blank">Single Prodcut</a></li>
+                                                    <li><a href="wishlist.html" target="_blank">Wishlist</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>                     
+                                        <li class="mega-parent"><a href="/home/list">儿童</a>
+                                            <div class="mega-menu-area mma-970">
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">Pages-01</li>
+                                                    <li><a href="about-us.html" target="_blank">About-us</a></li>
+                                                    <li><a href="blog.html" target="_blank">Blog</a></li>
+                                                    <li><a href="single-blog.html" target="_blank">Single Blog</a></li>
+                                                </ul>
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">pages-02</li>
+                                                    <li><a href="cart.html" target="_blank">Cart</a></li>
+                                                    <li><a href="checkout.html" target="_blank">Checkout</a></li>
+                                                    <li><a href="compare.html" target="_blank">Compare</a></li>
+                                                    <li><a href="complete-order.html" target="_blank">Complete Order</a></li>
+                                                    <li><a href="contact-us.html" target="_blank">Contact US</a></li>
+                                                </ul>
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">pages-03</li>
+                                                    <li><a href="login.html" target="_blank">Login</a></li>
+                                                    <li><a href="my-account.html" target="_blank">My Account</a></li>
+                                                </ul>
+                                                <ul class="single-mega-item coloum-4">
+                                                   <li class="menu-title uppercase">pages-03</li>
+                                                    <li><a href="shop.html" target="_blank">Shop</a></li>
+                                                    <li><a href="single-product.html" target="_blank">Single Prodcut</a></li>
+                                                    <li><a href="wishlist.html" target="_blank">Wishlist</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>                     
+                                        <li><a href="/home/list">精选</a></li>
+                                        <li><a href="about-us.html">关于</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -184,76 +240,7 @@
                             </div>
                                         
                             <!-- mobile-menu-area start -->
-                            <div class="mobile-menu-area">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <nav id="dropdown">
-                                                <ul>
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="shop.html">Man</a>
-                                                        <ul class="single-mega-item">
-                                                            <li><a href="shop.html">Shirt 01</a></li>
-                                                            <li><a href="shop.html">Shirt 02</a></li>
-                                                            <li><a href="shop.html">Shirt 03</a></li>
-                                                            <li><a href="shop.html">Shirt 04</a></li>
-                                                            <li><a href="shop.html">Pant 01</a></li>
-                                                            <li><a href="shop.html">Pant 02</a></li>
-                                                            <li><a href="shop.html">Pant 03</a></li>
-                                                            <li><a href="shop.html">Pant 04</a></li>
-                                                            <li><a href="shop.html">T-Shirt 01</a></li>
-                                                            <li><a href="shop.html">T-Shirt 02</a></li>
-                                                            <li><a href="shop.html">T-Shirt 03</a></li>
-                                                            <li><a href="shop.html">T-Shirt 04</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="shop.html">Shop</a>
-                                                        <ul class="single-mega-item">
-                                                            <li><a href="shop.html">Sharee 01</a></li>
-                                                            <li><a href="shop.html">Sharee 02</a></li>
-                                                            <li><a href="shop.html">Sharee 03</a></li>
-                                                            <li><a href="shop.html">Sharee 04</a></li>
-                                                            <li><a href="shop.html">Sharee 05</a></li>
-                                                            <li><a href="shop.html">Lahenga 01</a></li>
-                                                            <li><a href="shop.html">Lahenga 02</a></li>
-                                                            <li><a href="shop.html">Lahenga 03</a></li>
-                                                            <li><a href="shop.html">Lahenga 04</a></li>
-                                                            <li><a href="shop.html">Lahenga 05</a></li>
-                                                            <li><a href="shop.html">Sandel 01</a></li>
-                                                            <li><a href="shop.html">Sandel 02</a></li>
-                                                            <li><a href="shop.html">Sandel 03</a></li>
-                                                            <li><a href="shop.html">Sandel 04</a></li>
-                                                            <li><a href="shop.html">Sandel 05</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li> <a href="#">Pages</a>                                               
-                                                        <ul class="single-mega-item coloum-4">
-                                                            <li><a href="about-us.html" target="_blank">About-us</a></li>
-                                                            <li><a href="blog.html" target="_blank">Blog</a></li>
-                                                            <li><a href="blog-right.html" target="_blank">Blog-Right</a></li>
-                                                            <li><a href="single-blog.html" target="_blank">Single Blog</a></li>
-                                                           <li class="menu-title uppercase">pages-02</li>
-                                                            <li><a href="cart.html" target="_blank">Cart</a></li>
-                                                            <li><a href="checkout.html" target="_blank">Checkout</a></li>
-                                                            <li><a href="compare.html" target="_blank">Compare</a></li>
-                                                            <li><a href="complete-order.html" target="_blank">Complete Order</a></li>
-                                                            <li><a href="contact-us.html" target="_blank">Contact US</a></li>
-                                                           <li class="menu-title uppercase">pages-03</li>
-                                                            <li><a href="login.html" target="_blank">Login</a></li>
-                                                            <li><a href="my-account.html" target="_blank">My Account</a></li>
-                                                           <li class="menu-title uppercase">pages-03</li>
-                                                            <li><a href="shop.html" target="_blank">Shop</a></li>
-                                                            <li><a href="single-product.html" target="_blank">Single Prodcut</a></li>
-                                                            <li><a href="wishlist.html" target="_blank">Wishlist</a></li>
-                                                        </ul>
-                                                   </li>
-                                                    <li><a href="about-us.html">about</a></li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <!--mobile menu area end-->
                         </div>
                     </div>
@@ -313,24 +300,24 @@
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                         <div class="single-footer contact-us">
                             <div class="footer-title uppercase">
-                                <h5>Contact US</h5> </div>
+                                <h5>联系我们</h5> </div>
                             <ul>
                                 <li>
                                     <div class="contact-icon"> <i class="zmdi zmdi-pin-drop"></i> </div>
                                     <div class="contact-text">
-                                        <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>
+                                        <p><span>石家庄晋州市中兴路</span> <span>庞磐</span></p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>
                                     <div class="contact-text">
-                                        <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>
+                                        <p><span><a href="#">571451865@qq.com</a></span> <span><a href="#">MassiveRock0104@163.com</a></span></p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>
                                     <div class="contact-text">
-                                        <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>
+                                        <p><span>+86 17611130104</span> <span>+86 (0311)84466226</span></p>
                                     </div>
                                 </li>
                             </ul>
@@ -339,15 +326,15 @@
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
                         <div class="single-footer informaton-area">
                             <div class="footer-title uppercase">
-                                <h5>Information</h5> </div>
+                                <h5>信息</h5> </div>
                             <div class="informatoin">
                                 <ul>
-                                    <li><a href="#">My Account</a></li>
-                                    <li><a href="#">Order History</a></li>
-                                    <li><a href="#">Wishlist</a></li>
-                                    <li><a href="#">Returnes</a></li>
-                                    <li><a href="#">Private Policy</a></li>
-                                    <li><a href="#">Site Map</a></li>
+                                    <li><a href="#">我的账户</a></li>
+                                    <li><a href="#">历史订单</a></li>
+                                    <li><a href="#">愿望</a></li>
+                                    <li><a href="#">返回</a></li>
+                                    <li><a href="#">私人定制</a></li>
+                                    <li><a href="#">网点地图</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -355,7 +342,7 @@
                     <div class="col-lg-3 col-md-4 hidden-sm col-xs-12">
                         <div class="single-footer instagrm-area">
                             <div class="footer-title uppercase">
-                                <h5>InstaGram</h5> 
+                                <h5>友情</h5> 
                             </div>
                             <div class="instagrm">
                                 <ul>
