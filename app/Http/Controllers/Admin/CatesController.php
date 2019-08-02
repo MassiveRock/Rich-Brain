@@ -90,7 +90,8 @@ class CatesController extends Controller
      */
     public function show($id)
     {
-        //
+        $goods = DB::select('select * from goods where cid = '.$id.'');
+        return view('admin.cates.detial',['goods'=>$goods]);
     }
 
     /**

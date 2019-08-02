@@ -18,13 +18,14 @@ class RolesController extends Controller
     {
         $nodes = DB::table('nodes')->get();
         $arr = [];
+        $temp = [];
         foreach($nodes as $key=>$value){
-            $temp[$value->aname] = $value->desc;
+            // $temp[$value->aname] = $value->desc;
             $temp['id'] = $value->id;
             $temp['desc'] = $value->desc;
-            $temp['aname'] = 
+            $temp['aname'] = $value->aname;
 
-            $arr[$value->cname] = $temp;
+            $arr[$value->cname][] = $temp;
         }
         return $arr;
     }
@@ -36,7 +37,9 @@ class RolesController extends Controller
     public function index()
     {
         //加载页面
-        return view('admin.roles.index');
+        //显示遍历
+        $data = DB::table('roles')->get();
+        return view('admin.roles.index',['data'=>$data]);
     }
 
     /**
@@ -62,7 +65,27 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
+        DB::beginTransaction();
         dump($request->all());
+
+        $rname = $request->input('rname');
+        $nid = $request->input('nid');
+        $rid = DB::table('roles')->insertGetId(['rname'=>$rname]);
+
+        if($rid){
+            foreach($nid as $key=>$value){
+                $res = DB::table('roles_nodes')->insert(['rid'=>$rid,'nid'=>$value]);
+                if(!$res){
+                    DB::rollback();
+                    return back()->with('error','添加失败');
+                }
+            }
+            
+        }
+
+        DB::commit();
+
+        return redirect('admin/roles')->with('success','添加成功');
     }
 
     /**

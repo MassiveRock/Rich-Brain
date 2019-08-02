@@ -59,16 +59,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
-                        <form action="__URL__/check" method="post" class="login-side">
+                        <form action="/home/login/dologin" method="post" class="login-side">
+                            {{ csrf_field() }}
                             <div class="login-reg">
                                 <h3>登录</h3>
                                 <div class="input-box mb-20">
                                     <label class="control-label">用户名</label>
-                                    <input type="email" placeholder="E-Mail" value="" name="account" class="info">
+                                    <input type="text" placeholder="用户名" value="" name="uname" class="info">
                                 </div>
                                 <div class="input-box">
                                     <label class="control-label">密码</label>
-                                    <input type="password" placeholder="Password" value="" name="password" class="info">
+                                    <input type="password" placeholder="Password" value="" name="upass" class="info">
                                 </div>
                             </div>
                             <div class="frm-action">

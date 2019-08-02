@@ -26,18 +26,23 @@
                     <td>{{ $v->pid }}</td>
                     <td>{{ $v->path }}</td>
                     <td>
-                    	@if($v->status == 1)
-                    		<span style="background:yellowgreen; border-radius:3px;">启用</span>
-                    	@else
-                    		<span style="background:red; border-radius:3px;">禁用</span>
-                    	@endif
+                        @if($v->status == 1)
+                        <span style="background: #76B249">启用</span>
+                        @else 
+                        <span style="background: #E2641C">未启用</span>
+                        @endif
                     </td>
                     <td>{{ $v->created_at }}</td>
                     <td>
-                    	@if(substr_count($v->path,',') < 3)
-                    	    <a href="/admin/cates/create?id={{ $v->id }}" class="btn btn-small">添加子分类</a>
-                    	@else
-                            <a href="" class="btn btn-small">添加商品</a>
+                        @if(substr_count($v->path,',') < 3)
+                        <a href="/admin/cates/create?id={{ $v->id }}" class="btn btn-small">添加子分类</a>
+                        @else
+                        <a href="/admin/goods/create?id={{ $v->id }}" class="btn btn-small">添加商品</a>
+                        <form action="/admin/cates/{{ $v->id }}" method="post">
+                            {{ csrf_field() }}
+                            {{ method_field('GET') }}
+                            <input type="submit" class="btn btn-small" value="查看商品">
+                        </form>
                         @endif
                     </td>
                 </tr>

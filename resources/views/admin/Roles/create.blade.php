@@ -23,7 +23,7 @@
         					<h3>{{ $controllernames[$k] }}</h3>
         					<ul class="mws-form-list inline">
         						@foreach($v as $kk=>$vv)
-        						<li><input type="checkbox" value="{{ $kk }}" name="nodes[]"> <label>{{ $vv }}</label></li>
+        						<li><input type="checkbox" value="{{ $vv['id'] }}" name="nid[]"> <label>{{ $vv['desc'] }}</label></li>
         						@endforeach
         					</ul>
         					@endforeach

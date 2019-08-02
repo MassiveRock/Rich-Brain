@@ -3,7 +3,7 @@
 @section('content')
 	<div class="mws-panel grid_8">
     	<div class="mws-panel-header">
-        	<span><i class="icon-table"></i> Simple Table</span>
+        	<span><i class="icon-table"></i>管理员列表</span>
         </div>
         <div class="mws-panel-body no-padding">
             <table class="mws-table">
@@ -12,6 +12,7 @@
                         <th>ID</th>
                         <th>管理员名称</th>
                         <th>管理员头像</th>
+                        <th>角色</th>
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -21,9 +22,9 @@
                         <td>{{ $v->id }}</td>
                         <td>{{ $v->uname }}</td>
                         <td><img src="/uploads/{{ $v->profile }}" style="width:80px; border-radius:10px;"></td>
+                        <td>{{ $v->rname }}</td>
                         <td>
-                        	<a href="">删除</a>
-                        	<a href="">修改</a>
+                        	<a href="/admin/adminuser/{{ $v->id }}/edit">修改角色</a>
                         </td>
                     </tr>
                     @endforeach

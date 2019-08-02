@@ -132,93 +132,20 @@
                                 <nav id="primary-menu">
                                     <ul class="main-menu">
                                         <li class="current"><a class="active" href="/home">主页</a></li>
-                                       <li class="mega-parent"><a href="/home/list">男子</a>
+                                        @foreach($cates as $k=>$v)
+                                       <li class="mega-parent"><a href="/home/list">{{ $v->cname }}</a>
                                             <div class="mega-menu-area mma-970">
+                                                @foreach($v->list as $ke=>$va)
                                                 <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">Pages-01</li>
-                                                    <li><a href="about-us.html" target="_blank">About-us</a></li>
-                                                    <li><a href="blog.html" target="_blank">Blog</a></li>
-                                                    <li><a href="single-blog.html" target="_blank">Single Blog</a></li>
+                                                    <li class="menu-title uppercase">{{ $va->cname }}</li>
+                                                    @foreach($va->list as $key=>$value)
+                                                    <li><a href="about-us.html" target="_blank">{{ $value->cname }}</a></li>
+                                                    @endforeach
                                                 </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-02</li>
-                                                    <li><a href="cart.html" target="_blank">Cart</a></li>
-                                                    <li><a href="checkout.html" target="_blank">Checkout</a></li>
-                                                    <li><a href="compare.html" target="_blank">Compare</a></li>
-                                                    <li><a href="complete-order.html" target="_blank">Complete Order</a></li>
-                                                    <li><a href="contact-us.html" target="_blank">Contact US</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-03</li>
-                                                    <li><a href="login.html" target="_blank">Login</a></li>
-                                                    <li><a href="my-account.html" target="_blank">My Account</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-03</li>
-                                                    <li><a href="shop.html" target="_blank">Shop</a></li>
-                                                    <li><a href="single-product.html" target="_blank">Single Prodcut</a></li>
-                                                    <li><a href="wishlist.html" target="_blank">Wishlist</a></li>
-                                                </ul>
+                                                @endforeach
                                             </div>
-                                        </li>                     
-                                    <li class="mega-parent"><a href="/home/list">女子</a>
-                                            <div class="mega-menu-area mma-970">
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">Pages-01</li>
-                                                    <li><a href="about-us.html" target="_blank">About-us</a></li>
-                                                    <li><a href="blog.html" target="_blank">Blog</a></li>
-                                                    <li><a href="single-blog.html" target="_blank">Single Blog</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-02</li>
-                                                    <li><a href="cart.html" target="_blank">Cart</a></li>
-                                                    <li><a href="checkout.html" target="_blank">Checkout</a></li>
-                                                    <li><a href="compare.html" target="_blank">Compare</a></li>
-                                                    <li><a href="complete-order.html" target="_blank">Complete Order</a></li>
-                                                    <li><a href="contact-us.html" target="_blank">Contact US</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-03</li>
-                                                    <li><a href="login.html" target="_blank">Login</a></li>
-                                                    <li><a href="my-account.html" target="_blank">My Account</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-03</li>
-                                                    <li><a href="shop.html" target="_blank">Shop</a></li>
-                                                    <li><a href="single-product.html" target="_blank">Single Prodcut</a></li>
-                                                    <li><a href="wishlist.html" target="_blank">Wishlist</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>                     
-                                        <li class="mega-parent"><a href="/home/list">儿童</a>
-                                            <div class="mega-menu-area mma-970">
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">Pages-01</li>
-                                                    <li><a href="about-us.html" target="_blank">About-us</a></li>
-                                                    <li><a href="blog.html" target="_blank">Blog</a></li>
-                                                    <li><a href="single-blog.html" target="_blank">Single Blog</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-02</li>
-                                                    <li><a href="cart.html" target="_blank">Cart</a></li>
-                                                    <li><a href="checkout.html" target="_blank">Checkout</a></li>
-                                                    <li><a href="compare.html" target="_blank">Compare</a></li>
-                                                    <li><a href="complete-order.html" target="_blank">Complete Order</a></li>
-                                                    <li><a href="contact-us.html" target="_blank">Contact US</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-03</li>
-                                                    <li><a href="login.html" target="_blank">Login</a></li>
-                                                    <li><a href="my-account.html" target="_blank">My Account</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item coloum-4">
-                                                   <li class="menu-title uppercase">pages-03</li>
-                                                    <li><a href="shop.html" target="_blank">Shop</a></li>
-                                                    <li><a href="single-product.html" target="_blank">Single Prodcut</a></li>
-                                                    <li><a href="wishlist.html" target="_blank">Wishlist</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>                     
+                                        </li>            
+                                        @endforeach         
                                         <li><a href="/home/list">精选</a></li>
                                         <li><a href="about-us.html">关于</a></li>
                                     </ul>

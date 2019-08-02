@@ -1,5 +1,3 @@
-
-
 @extends('admin.layout.index')
 
 @section('content')
@@ -8,44 +6,58 @@
                     	<span>Inline Form</span>
                     </div>
                     <div class="mws-panel-body no-padding">
-                    	<form class="mws-form" action="form_layouts.html">
+                    	<form class="mws-form" action="/admin/goods" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                     		<div class="mws-form-inline">
                     			<div class="mws-form-row">
-                    				<label class="mws-form-label">Small text field</label>
+                    				<label class="mws-form-label">商品名称</label>
                     				<div class="mws-form-item">
-                    					<input type="text" class="small">
+                    					<input type="text" name="name" class="small">
                     				</div>
                     			</div>
                     			<div class="mws-form-row">
-                    				<label class="mws-form-label">Small text field</label>
+                    				<label class="mws-form-label">商品库存</label>
                     				<div class="mws-form-item">
-                    					<input type="text" class="small">
+                    					<input type="text" name="num" class="small">
                     				</div>
                     			</div>
                     			<div class="mws-form-row">
-                    				<label class="mws-form-label">Small text field</label>
+                    				<label class="mws-form-label">市场价格</label>
                     				<div class="mws-form-item">
-                    					<input type="text" class="small">
+                    					<input type="text" name="mprice" class="small">
                     				</div>
                     			</div>
                     			<div class="mws-form-row">
-                    				<label class="mws-form-label">Small text field</label>
+                    				<label class="mws-form-label">本站价格</label>
                     				<div class="mws-form-item">
-                    					<input type="text" class="small">
+                    					<input type="text" name="price" class="small">
                     				</div>
                     			</div>
                     			<div class="mws-form-row">
-                    				<label class="mws-form-label">Medium text field</label>
+                    				<label class="mws-form-label">展示图片</label>
                     				<div class="mws-form-item">
-                    					<input type="text" class="medium">
+                    					<input type="file" name="image[]" class="medium" multiple>
                     				</div>
                     			</div>
+
                     			<div class="mws-form-row">
-                    				<label class="mws-form-label">Large text field</label>
+                    				<label class="mws-form-label">商品描述</label>
                     				<div class="mws-form-item">
-						    <script id="editor" type="text/plain" style="width:800px;height:500px;"></script>
+						                  <script id="editor" name="desc" type="text/plain" style="width:800px;height:500px;"></script>
                     				</div>
                     			</div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">所属分类</label>
+                                    <div class="mws-form-item">
+                                        <select class="small" name="cid">
+                                            <option value="0">--请选择--</option>
+                                            @foreach($cates as $k=>$v)
+                                                <option value="{{ $v->id }}"  {{ substr_count($v->path,',') <= 2 ? 'disabled' : "" }}>{{ $v->cname }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                
                     			
                     		</div>
                     		<div class="mws-button-row">

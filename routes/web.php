@@ -23,6 +23,11 @@ Route::get('admin/login','Admin\LoginController@login');
 //后台执行登录路由
 Route::post('admin/login/dologin','Admin\LoginController@dologin');
 
+//无权限
+Route::get('admin/allow',function(){
+	return view('admin.allow.allow');
+});
+//权限验证中间件  allow
 Route::group(['middleware'=>'login'],function(){
 	//后台首页路由-----庞磐
 	Route::get('admin','Admin\IndexController@index');
@@ -32,6 +37,7 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/cates','Admin\CatesController');
 	//后台商品管理路由
 	Route::resource('admin/goods','Admin\GoodsController');
+
 
 	//后台管理员管理路由
 	Route::resource('admin/adminuser','Admin\AdminuserController');
